@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
         Account account = accdb.getAccount(username, password);
         
         if(account==null){
-            request.setAttribute("mess", "Wrong shit");
+            request.setAttribute("mess", "Wrong username or password");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
         else{

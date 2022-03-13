@@ -16,7 +16,7 @@ public class RoomType {
     protected float pricepernight;
     protected String description;
     protected String facilities;
-    protected String imageURL;
+    protected String rpic;
 
     public int getRid() {
         return rid;
@@ -66,21 +66,21 @@ public class RoomType {
         this.facilities = facilities;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getRpic() {
+        return rpic;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setRpic(String rpic) {
+        this.rpic = rpic;
     }
 
-    public RoomType(String rtype, int maxallowed, float pricepernight, String description, String facilities, String imageURL) {
+    public RoomType(String rtype, int maxallowed, float pricepernight, String description, String facilities, String rpic) {
         this.rtype = rtype;
         this.maxallowed = maxallowed;
         this.pricepernight = pricepernight;
         this.description = description;
         this.facilities = facilities;
-        this.imageURL = imageURL;
+        this.rpic = rpic;
     }
 
     public RoomType() {

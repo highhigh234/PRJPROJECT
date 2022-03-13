@@ -22,11 +22,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Giới Thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
                             <c:if test="${sessionScope.account.isAdmin == true}">
-                            <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
+                            <li class="nav-item"><a class="nav-link" href="room">Thống kê</a></li>
                             </c:if>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
@@ -57,10 +56,26 @@
                                 <h2 class="card-title">${rot.rtype}</h2>
                                 <p class="card-text">${rot.description}</p>
                             </div>
-                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="detail?rname=${rot.rtype}">More Info</a></div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="detail?rname=${rot.rtype}">More Info</a>
+                                <c:if test="${sessionScope.account.isAdmin == true}">
+                                    <a class="btn btn-primary btn-sm" href="update?rid=${rot.rid}">Update</a>
+                                    <a class="btn btn-primary btn-sm" href="delete?rid=${rot.rid}">Delete</a>
+                                </c:if>
+                            </div>
                         </div>
                     </div>
                 </c:forEach>
+                <c:if test="${sessionScope.account.isAdmin == true}">
+                    <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Room Type</h2>
+                            <p class="card-text">DESCRIPTION</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="insert">Insert Room type</a></div>
+                    </div>
+                </div>
+                </c:if>
             </div>
         </div>
         <!-- Footer-->

@@ -28,10 +28,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Giới Thiệu</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
-
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                            <li class="nav-item"><a class="nav-link" href="room">Thống kê</a></li>
+                            </c:if>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>

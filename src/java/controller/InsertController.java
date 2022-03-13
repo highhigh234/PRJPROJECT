@@ -18,7 +18,7 @@ import model.RoomType;
  *
  * @author admin
  */
-public class DetailController extends HttpServlet {
+public class InsertController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class DetailController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DetailController</title>");            
+            out.println("<title>Servlet InsertController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DetailController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet InsertController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,11 +58,8 @@ public class DetailController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int rid = Integer.parseInt(request.getParameter("rid"));
-        RoomTypeDBContext rtdb = new RoomTypeDBContext();
-        RoomType roomtypess = rtdb.getRoomType(rid);
-        request.setAttribute("roomtypess", roomtypess);
-        request.getRequestDispatcher("detail.jsp").forward(request, response);
+        request.getRequestDispatcher("insert.jsp").forward(request, response);
+
     }
 
     /**
@@ -76,7 +73,35 @@ public class DetailController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String raw_rid = request.getParameter("rid");
+        String raw_rtype = request.getParameter("rtype");
+        String raw_allowance = request.getParameter("maxallowed");
+        String raw_price = request.getParameter("pricepernight");
+        String raw_description = request.getParameter("description");
+        String raw_facilities = request.getParameter("facilities");
+        String raw_rpic = request.getParameter("rpic");
+        
+        int rid = Integer.parseInt(raw_rid);
+        String rtype = raw_rtype;
+        int maxallowed = Integer.parseInt(raw_allowance);
+        float pricepernight = Float.parseFloat(raw_price);
+        String description = raw_description;
+        String facilities = raw_facilities;
+        String rpic = raw_rpic;
+        
+        RoomType r = new RoomType();
+        r.setRid(rid);
+        r.setRtype(rtype);
+        r.setMaxallowed(maxallowed);
+        r.setPricepernight(pricepernight);
+        r.setDescription(description);
+        r.setFacilities(facilities);
+        r.setRpic(rpic);
+        
+        RoomTypeDBContext rtdb = new RoomTypeDBContext();
+        rtdb.insertRoomType(r);
+        response.sendRedirect("room");
+        
     }
 
     /**
