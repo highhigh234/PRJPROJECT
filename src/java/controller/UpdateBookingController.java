@@ -22,7 +22,7 @@ import model.RoomType;
  *
  * @author admin
  */
-public class UpdateBookingController extends HttpServlet {
+public class UpdateBookingController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -60,7 +60,7 @@ public class UpdateBookingController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int bid = Integer.parseInt(request.getParameter("bid"));
         BookingDBContext bdb = new BookingDBContext();
@@ -84,7 +84,7 @@ public class UpdateBookingController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String raw_bid = request.getParameter("bid");
         String raw_rid = request.getParameter("rid");

@@ -24,6 +24,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
+                        <li class="nav-item">
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                                <a class="nav-link" href="listallcustomer" class="btn btn-light" >Tất cả khách</a>
+                            </c:if>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>
@@ -64,14 +69,14 @@
                 </c:forEach>
                 <c:if test="${sessionScope.account.isAdmin == true}">
                     <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h2 class="card-title">Room Type</h2>
-                            <p class="card-text">DESCRIPTION</p>
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h2 class="card-title">Room Type</h2>
+                                <p class="card-text">DESCRIPTION</p>
+                            </div>
+                            <div class="card-footer"><a class="btn btn-primary btn-sm" href="insert">Insert Room type</a></div>
                         </div>
-                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="insert">Insert Room type</a></div>
                     </div>
-                </div>
                 </c:if>
             </div>
         </div>

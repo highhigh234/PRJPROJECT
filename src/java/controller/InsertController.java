@@ -18,7 +18,7 @@ import model.RoomType;
  *
  * @author admin
  */
-public class InsertController extends HttpServlet {
+public class InsertController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -56,7 +56,7 @@ public class InsertController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("insert.jsp").forward(request, response);
 
@@ -71,7 +71,7 @@ public class InsertController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String raw_rid = request.getParameter("rid");
         String raw_rtype = request.getParameter("rtype");

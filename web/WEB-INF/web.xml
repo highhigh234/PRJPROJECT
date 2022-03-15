@@ -56,6 +56,10 @@
         <servlet-name>ListBookingController</servlet-name>
         <servlet-class>controller.ListBookingController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteBookingController</servlet-name>
+        <servlet-class>controller.DeleteBookingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>BookingController</servlet-name>
         <url-pattern>/booking</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>ListBookingController</servlet-name>
         <url-pattern>/listallbooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBookingController</servlet-name>
+        <url-pattern>/deletebooking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

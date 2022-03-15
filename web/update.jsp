@@ -34,7 +34,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
-
+                                                <li class="nav-item">
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                            <a class="nav-link" href="listallcustomer" class="btn btn-light" >Tất cả khách</a>
+                        </c:if>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>
@@ -47,16 +51,19 @@
                 <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://upload.wikimedia.org/wikipedia/commons/6/61/Cualovedem.jpg" alt="..."  /></div>
                 <div class="col-lg-5" style="display: inline-block">
                     <form action="update" method="POST">
-                        <h1 class="font-weight-light">
-                            Room id: <input name="rid" value="${roomtypes.rid}" readonly><br/></h1>
-                        <h2>Room type: <input type="text" name="rtype" value="${roomtypes.rtype}"></h2>
-                        <p>Number of guest allowed : <input type="text" name="maxallowed" value="${roomtypes.maxallowed}"></p>
-                        <p>Price Per Night : <input type="text" name="pricepernight" value="${roomtypes.pricepernight}"></p>
-                        <p>Description : <input type="text" name="description" value="${roomtypes.description}"></p>
-                        <p>Facilities : <input type="text" name="facilities" value="${roomtypes.facilities}"></p>
-                        <p>Room's pic: <input type="text" name="rpic" value="${roomtypes.rpic}"></p>
+                        <c:if test="${sessionScope.account.isAdmin == true}">
+                            <h1 class="font-weight-light">
+                                Room id: <input name="rid" value="${roomtypes.rid}" readonly><br/></h1>
+                            <h2>Room type: <input type="text" name="rtype" value="${roomtypes.rtype}"></h2>
+                            <p>Number of guest allowed : <input type="text" name="maxallowed" value="${roomtypes.maxallowed}"></p>
+                            <p>Price Per Night : <input type="text" name="pricepernight" value="${roomtypes.pricepernight}"></p>
+                            <p>Description : <input type="text" name="description" value="${roomtypes.description}"></p>
+                            <p>Facilities : <input type="text" name="facilities" value="${roomtypes.facilities}"></p>
+                            <p>Room's pic: <input type="text" name="rpic" value="${roomtypes.rpic}"></p>
 
-                        <input type="submit" value="Done">
+                            <input type="submit" value="Done">
+                        </c:if>
+
                     </form>
                 </div>
             </div>

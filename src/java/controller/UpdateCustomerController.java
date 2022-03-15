@@ -19,7 +19,7 @@ import model.Customer;
  *
  * @author admin
  */
-public class UpdateCustomerController extends HttpServlet {
+public class UpdateCustomerController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -57,7 +57,7 @@ public class UpdateCustomerController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int cid = Integer.parseInt(request.getParameter("cid"));
         CustomerDBContext cdb = new CustomerDBContext();
@@ -75,7 +75,7 @@ public class UpdateCustomerController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void processPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String raw_cid = request.getParameter("cid");
         String raw_cfirstname = request.getParameter("cfirstname");

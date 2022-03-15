@@ -150,4 +150,32 @@ public class BookingDBContext extends DBContext{
             }
         }    
     }
+     
+     
+     public void deletebooking(Booking b){
+         String sql = "DELETE FROM [Booking]\n" +
+                    "      WHERE [bid] = ?";
+         PreparedStatement stm = null;
+        try {
+            stm = connection.prepareStatement(sql);
+            stm.setInt(1, b.getBid());
+            stm.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            if(stm!=null)
+                try {
+                    stm.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(BookingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            }if(connection!=null)
+                try {
+                    connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(BookingDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+                 
+     }
 }

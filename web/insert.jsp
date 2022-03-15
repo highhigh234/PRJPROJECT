@@ -34,6 +34,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
+                        <li class="nav-item">
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                            <a class="nav-link" href="listallcustomer" class="btn btn-light" >Tất cả khách</a>
+                        </c:if>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>
@@ -48,7 +53,7 @@
                     <form action="insert" method="POST">
                         <h1 class="font-weight-light">
                             Room type: <input type="text" name="rtype" value="${roomtypes.rtype}"></h1>
-                            <h2>Room id: <input type="text" name="rid" value="${roomtypes.rid}"></h2>
+                        <h2>Room id: <input type="text" name="rid" value="${roomtypes.rid}"></h2>
                         <p>Number of guest allowed : <input type="text" name="maxallowed" value="${roomtypes.maxallowed}"></p>
                         <p>Price Per Night : <input type="text" name="pricepernight" value="${roomtypes.pricepernight}"></p>
                         <p>Description : <input type="text" name="description" value="${roomtypes.description}"></p>

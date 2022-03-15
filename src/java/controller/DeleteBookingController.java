@@ -1,24 +1,24 @@
-  /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package controller;
 
-import dal.RoomTypeDBContext;
+import dal.BookingDBContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.RoomType;
+import model.Booking;
 
 /**
  *
  * @author admin
  */
-public class DeleteController extends BaseAuthController {
+public class DeleteBookingController extends BaseAuthController {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,16 +31,12 @@ public class DeleteController extends BaseAuthController {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String raw_rid = request.getParameter("rid");
-        RoomTypeDBContext rtdb = new RoomTypeDBContext();
-        RoomType rt = new RoomType();
-        
-        int rid = Integer.parseInt(raw_rid);
-        rt.setRid(rid);
-        rtdb.deleteRoomType(rt);
-        response.sendRedirect("room");
-        
-        
+        int bid = Integer.parseInt(request.getParameter("bid"));
+        BookingDBContext bdb = new BookingDBContext();
+        Booking b = new Booking();
+        b.setBid(bid);
+        bdb.deletebooking(b);
+        response.sendRedirect("listallcustomer");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -55,7 +51,7 @@ public class DeleteController extends BaseAuthController {
     @Override
     protected void processGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+            processRequest(request, response);
     }
 
     /**

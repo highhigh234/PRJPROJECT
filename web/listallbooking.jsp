@@ -30,6 +30,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
+                        <li class="nav-item">
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                                <a class="nav-link" href="listallcustomer" class="btn btn-light" >Tất cả khách</a>
+                            </c:if>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>
@@ -61,7 +66,11 @@
                             <td>${books.checkinDate}</td>
                             <td>${books.checkoutDate}</td>
                             <td>${books.guestusename}</td>
-                            <td><a href="updatebooking?bid=${books.bid}" class="btn btn-light" >Update booking</a>
+                            <td>
+                                <c:if test="${sessionScope.account.isAdmin == true}">
+                                    <a href="updatebooking?bid=${books.bid}" class="btn btn-primary" >Update booking</a>
+                                    <a href="deletebooking?bid=${books.bid}" class="btn btn-primary" >Delete booking</a>
+                                </c:if>
                             </td>
                         </tr>
                     </c:forEach>
