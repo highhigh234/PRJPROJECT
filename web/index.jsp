@@ -30,9 +30,6 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
-                            <c:if test="${sessionScope.account.isAdmin == true}">
-                            <li class="nav-item"><a class="nav-link" href="room">Thống kê</a></li>
-                            </c:if>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>

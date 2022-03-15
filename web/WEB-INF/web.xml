@@ -44,6 +44,18 @@
         <servlet-name>ListCustomerController</servlet-name>
         <servlet-class>controller.ListCustomerController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateCustomerController</servlet-name>
+        <servlet-class>controller.UpdateCustomerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateBookingController</servlet-name>
+        <servlet-class>controller.UpdateBookingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListBookingController</servlet-name>
+        <servlet-class>controller.ListBookingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>BookingController</servlet-name>
         <url-pattern>/booking</url-pattern>
@@ -86,7 +98,19 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListCustomerController</servlet-name>
-        <url-pattern>/list</url-pattern>
+        <url-pattern>/listallcustomer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCustomerController</servlet-name>
+        <url-pattern>/updatecustomer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateBookingController</servlet-name>
+        <url-pattern>/updatebooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListBookingController</servlet-name>
+        <url-pattern>/listallbooking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

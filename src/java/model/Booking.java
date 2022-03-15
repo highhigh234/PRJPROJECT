@@ -12,7 +12,7 @@ import java.sql.Date;
  * @author admin
  */
 public class Booking {
-    protected int bnum;
+    protected int bid;
     protected RoomType rid;
     protected Date checkinDate;
     protected Date checkoutDate;
@@ -21,19 +21,19 @@ public class Booking {
     }
 
     
-    public Booking(int bnum, RoomType rid, Date checkinDate, Date checkoutDate, String guestusename) {
-        this.bnum = bnum;
+    public Booking(int bid, RoomType rid, Date checkinDate, Date checkoutDate, String guestusename) {
+        this.bid = bid;
         this.rid = rid;
         this.checkinDate = checkinDate;
         this.checkoutDate = checkoutDate;
     }
 
-    public int getBnum() {
-        return bnum;
+    public int getBid() {
+        return bid;
     }
 
-    public void setBnum(int bnum) {
-        this.bnum = bnum;
+    public void setBid(int bid) {
+        this.bid = bid;
     }
 
     public RoomType getRid() {
