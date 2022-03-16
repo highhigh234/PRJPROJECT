@@ -28,6 +28,38 @@
         <servlet-name>SearchController</servlet-name>
         <servlet-class>controller.SearchController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateController</servlet-name>
+        <servlet-class>controller.UpdateController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InsertController</servlet-name>
+        <servlet-class>controller.InsertController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteController</servlet-name>
+        <servlet-class>controller.DeleteController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListCustomerController</servlet-name>
+        <servlet-class>controller.ListCustomerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateCustomerController</servlet-name>
+        <servlet-class>controller.UpdateCustomerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateBookingController</servlet-name>
+        <servlet-class>controller.UpdateBookingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ListBookingController</servlet-name>
+        <servlet-class>controller.ListBookingController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteBookingController</servlet-name>
+        <servlet-class>controller.DeleteBookingController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>BookingController</servlet-name>
         <url-pattern>/booking</url-pattern>
@@ -55,6 +87,38 @@
     <servlet-mapping>
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateController</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertController</servlet-name>
+        <url-pattern>/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteController</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListCustomerController</servlet-name>
+        <url-pattern>/listallcustomer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateCustomerController</servlet-name>
+        <url-pattern>/updatecustomer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateBookingController</servlet-name>
+        <url-pattern>/updatebooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListBookingController</servlet-name>
+        <url-pattern>/listallbooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteBookingController</servlet-name>
+        <url-pattern>/deletebooking</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

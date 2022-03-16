@@ -31,33 +31,29 @@
                             <div class="login-wrap p-4 p-md-5">
                                 <div class="d-flex">
                                 </div>
-                                <form action="booking" class="signin-form" method="POST">
-                                    <div class="form-group mt-3">First Name:
-                                        <input type="text" class="form-control" name="cfirstname" required>
-                                        <label class="form-control-placeholder" for="First Name"></label>
+                                <form action="updatebooking" class="signin-form" method="POST">
+                                    <div class="form-group mt-3">Booking id:
+                                        <input type="text" class="form-control" value="${booking.bid}" name="bid" readonly>
+                                    </div>
+                                    <div class="form-group mt-3">RoomType:
+                                        <select name="rid">
+                                            <c:forEach items="${requestScope.roomtypes}" var="d">
+                                                <option ${(d.rid == requestScope.booking.rid.rid)?"selected=\"selected\"":""}
+                                                    value="${d.rid}">${d.rtype}</option>
+                                            </c:forEach>
+                                        </select>
                                     </div>
                                     <div class="form-group mt-3">
-                                        Last Name: <input type="text" class="form-control" name="clastname" required>
-                                        <label class="form-control-placeholder" for="Last Name"></label>
+                                        Check in Date: <input type="date" class="form-control" value="${booking.checkinDate}" name="checkinDate" required>
                                     </div>
                                     <div class="form-group mt-3">
-                                        Date of birth: <input type="date" class="form-control" name="dob" required>
-                                        <label class="form-control-placeholder" for="DOB"></label>
+                                        Check out Datess <input type="date" class="form-control" value="${booking.checkoutDate}" name="checkoutDate" required>
                                     </div>
                                     <div class="form-group mt-3">
-                                        Address: <input type="text" class="form-control" name="address" required>
-                                        <label class="form-control-placeholder" for="address"></label>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        Phone number: <input type="text" class="form-control" name="phonenumber" required>
-                                        <label class="form-control-placeholder" for="phonenumber"></label>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        Guestusename: <input type="text" class="form-control" name="guestusename" required>
-                                        <label class="form-control-placeholder" for="guestusename"></label>
+                                        Guestusename: <input type="text" class="form-control" value="${booking.guestusename}" name="guestusename" readonly>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">NEXT</button>
+                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">Done</button>
                                     </div>
                                 </form>
                             </div>

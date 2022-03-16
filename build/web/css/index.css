@@ -75,7 +75,13 @@
     scroll-behavior: smooth;
   }
 }
-
+input {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 160px;
+    color: #CCC;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

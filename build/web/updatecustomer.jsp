@@ -31,33 +31,37 @@
                             <div class="login-wrap p-4 p-md-5">
                                 <div class="d-flex">
                                 </div>
-                                <form action="booking" class="signin-form" method="POST">
+                                <form action="updatecustomer" class="signin-form" method="POST">
+                                    <div class="form-group mt-3">Customer id:
+                                        <input type="text" class="form-control" value="${customer.cid}" name="cid" readonly>
+                                        
+                                    </div>
                                     <div class="form-group mt-3">First Name:
-                                        <input type="text" class="form-control" name="cfirstname" required>
-                                        <label class="form-control-placeholder" for="First Name"></label>
+                                        <input type="text" class="form-control" value="${customer.cfirstname}" name="cfirstname" required>
+                                        
                                     </div>
                                     <div class="form-group mt-3">
-                                        Last Name: <input type="text" class="form-control" name="clastname" required>
-                                        <label class="form-control-placeholder" for="Last Name"></label>
+                                        Last Name: <input type="text" class="form-control" value="${customer.clastname}" name="clastname" required>
+                                        
                                     </div>
                                     <div class="form-group mt-3">
-                                        Date of birth: <input type="date" class="form-control" name="dob" required>
-                                        <label class="form-control-placeholder" for="DOB"></label>
+                                        Date of birth: <input type="date" class="form-control" value="${customer.dob}" name="dob" required>
+                                        
                                     </div>
                                     <div class="form-group mt-3">
-                                        Address: <input type="text" class="form-control" name="address" required>
-                                        <label class="form-control-placeholder" for="address"></label>
+                                        Address: <input type="text" class="form-control" value="${customer.address}" name="address" required>
+                                        
                                     </div>
                                     <div class="form-group mt-3">
-                                        Phone number: <input type="text" class="form-control" name="phonenumber" required>
-                                        <label class="form-control-placeholder" for="phonenumber"></label>
+                                        Phone number: <input type="text" class="form-control" value="${customer.phonenumber}" name="phonenumber" required>
+                                        
                                     </div>
                                     <div class="form-group mt-3">
-                                        Guestusename: <input type="text" class="form-control" name="guestusename" required>
-                                        <label class="form-control-placeholder" for="guestusename"></label>
+                                        Guestusename: <input type="text" class="form-control" value="${customer.guestusename}" name="guestusename" readonly>
+                                        
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">NEXT</button>
+                                        <button type="submit" class="form-control btn btn-primary rounded submit px-3">Done</button>
                                     </div>
                                 </form>
                             </div>
