@@ -16,12 +16,12 @@
         <link rel="stylesheet" href="css/login.css" type="text/css">
 
     </head>
-    <body>
+    <body style="background-image: url(image/9-1_opt_rbus_leyz.jpeg)">
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">|BOOKING FORM|</h2>
+                        <h2 class="heading-section">UPDATE CUSTOMER'S INFORMATION</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -70,11 +70,6 @@
                 </div>
             </div>
         </section>
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
 
     </body>
 </html>

@@ -34,8 +34,25 @@ public class ListCustomerController extends BaseAuthController {
             throws ServletException, IOException {
         CustomerDBContext cdb = new CustomerDBContext();
         ArrayList<Customer> cus = cdb.getAllCustomer();
-        request.setAttribute("cus", cus);
+        int page, numberpage = 6;
+        String xpage = request.getParameter("page");
+        int size = cus.size();
+        int num = (size%6==0?(size/6):((size/6))+1);
+        if(xpage==null){
+            page = 1;
+        }else{
+            page = Integer.parseInt(xpage);
+        }
+        int start, end;
+        start =(page-1)*numberpage;
+        end = Math.min(page*numberpage, size);
         
+        ArrayList<Customer> cus2 =  cdb.getArrayByPage(cus, start, end);
+        
+        request.setAttribute("cus", cus2);
+        request.setAttribute("page", page);
+        request.setAttribute("num", num);
+                
         request.getRequestDispatcher("listallcustomer.jsp").forward(request, response);
     }
 

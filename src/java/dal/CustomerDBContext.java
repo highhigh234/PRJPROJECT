@@ -179,4 +179,13 @@ public class CustomerDBContext extends DBContext{
             }
         }
     }
+    
+    public ArrayList<Customer> getArrayByPage(ArrayList<Customer> customer, int start, int end){
+        ArrayList<Customer> customers = new ArrayList<>();
+        for (int i = start; i < end; i++) {
+            customers.add(customer.get(i));
+        }
+        return customers;
+    }
+    
 }

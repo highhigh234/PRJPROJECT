@@ -103,7 +103,7 @@ public class UpdateController extends BaseAuthController {
         r.setRpic(rpic);
         RoomTypeDBContext rtdb = new RoomTypeDBContext();
         rtdb.updateRoom(r);
-        response.sendRedirect("detail?rid="+rid);
+        response.sendRedirect("room");
         
     }
 

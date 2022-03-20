@@ -13,14 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Small Business - Start Bootstrap Template</title>
-        <!-- Favicon-->
+
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" href="#!">Khách Sạn SUN&SEA Cửa Lò | 128 Nguyễn Sư Hồi | 0936640999</a>
@@ -30,14 +27,17 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Trang chủ</a></li>
                         <li class="nav-item"><a class="nav-link" href="room">Hệ Thống Phòng</a></li>
                         <li class="nav-item"><a class="nav-link" href="search.jsp">Tìm Kiếm</a></li>
+                        <li class="nav-item">
+                            <c:if test="${sessionScope.account.isAdmin == true}">
+                                <a class="nav-link" href="listallcustomer" class="btn btn-light" >Tất cả khách</a>
+                            </c:if>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="#!">Liên Hệ</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Page Content-->
         <div class="container px-4 px-lg-5">
-            <!-- Heading Row-->
             <div class="row gx-4 gx-lg-5 align-items-center my-5">
                 <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://upload.wikimedia.org/wikipedia/commons/6/61/Cualovedem.jpg" alt="..."  /></div>
                 <div class="col-lg-5">
@@ -46,11 +46,9 @@
                     <a class="btn btn-primary" href="https://cualo.vn/gioi-thieu-ve-cua-lo/">Tới bài viết.</a>
                 </div>
             </div>
-            <!-- Call to Action-->
             <div class="card text-white bg-secondary my-5 py-4 text-center">
                 <div class="card-body"><p class="text-white m-0">Giới thiệu về thị xã Cửa Lò</p></div>
             </div>
-            <!-- Content Row-->
             <div class="row gx-4 gx-lg-5">
                 <div class="col-md-4 mb-5">
                     <div class="card h-100">
@@ -81,14 +79,12 @@
                 </div>
             </div>
         </div>
-        <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">&copy; SUN&SEA Hotel</p>
+                <p class="m-0 text-center text-white">128 Nguyễn Sư Hồi | 0936640999</p>
+            </div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        
     </body>
 </html>
 

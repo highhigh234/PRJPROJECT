@@ -1,11 +1,11 @@
-
+ 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Booking Form</title>
+        <title>Update Booking Form</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,12 +16,12 @@
         <link rel="stylesheet" href="css/login.css" type="text/css">
 
     </head>
-    <body>
+    <body style="background-image: url(image/9-1_opt_rbus_leyz.jpeg)">
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">|BOOKING FORM|</h2>
+                        <h2 class="heading-section">UPDATE BOOKING INFO</h2>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -63,10 +63,6 @@
             </div>
         </section>
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
 
     </body>
 </html>

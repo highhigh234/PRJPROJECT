@@ -13,14 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Small Business - Start Bootstrap Template</title>
-        <!-- Favicon-->
+
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/index.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" href="index.jsp">Khách Sạn SUN&SEA Cửa Lò | 128 Nguyễn Sư Hồi | 0936640999</a>
@@ -40,15 +37,12 @@
                 </div>
             </div>
         </nav>
-        <!-- Page Content-->
         <div class="container px-4 px-lg-5">
-            <!-- Heading Row-->
-            <!-- Call to Action-->
             <div class="card text-white bg-secondary my-5 py-4 text-center">
                 <div class="card-body"><p class="text-white m-0">List All Customer</p></div>
             </div>
             <div class="card text-white bg-secondary my-5 py-4 text-center" >
-                <table border='1px' style="color: white">
+                <table style="color: white">
                     <thead>
                         <tr>
                             <th>Booking id</th>
@@ -59,32 +53,33 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <c:forEach items="${requestScope.books}" var="books">
-                        <tr>
-                            <td>${books.bid}</td>
-                            <td>${books.rid.rtype}</td>
-                            <td>${books.checkinDate}</td>
-                            <td>${books.checkoutDate}</td>
-                            <td>${books.guestusename}</td>
-                            <td>
-                                <c:if test="${sessionScope.account.isAdmin == true}">
-                                    <a href="updatebooking?bid=${books.bid}" class="btn btn-primary" >Update booking</a>
-                                    <a href="deletebooking?bid=${books.bid}" class="btn btn-primary" >Delete booking</a>
-                                </c:if>
-                            </td>
-                        </tr>
-                    </c:forEach>
+                    <tbody>
+                        <c:forEach items="${requestScope.books}" var="books">
+                            <tr>
+                                <td>${books.bid}</td>
+                                <td>${books.rid.rtype}</td>
+                                <td>${books.checkinDate}</td>
+                                <td>${books.checkoutDate}</td>
+                                <td>${books.guestusename}</td>
+                                <td>
+                                    <c:if test="${sessionScope.account.isAdmin == true}">
+                                        <a href="updatebooking?bid=${books.bid}" class="btn btn-primary" style="padding: 6px 6px">Update booking</a>
+                                        <a href="deletebooking?bid=${books.bid}" class="btn btn-primary" style="padding: 6px 6px" >Delete booking</a>
+                                    </c:if>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
                 </table>
-            </div>
+            </div>      
         </div>
-        <!-- Footer-->
+
         <footer class="py-5 bg-dark">
-            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">&copy; SUN&SEA Hotel</p>
+                <p class="m-0 text-center text-white">128 Nguyễn Sư Hồi | 0936640999</p>
+            </div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
     </body>
 </html>
 
